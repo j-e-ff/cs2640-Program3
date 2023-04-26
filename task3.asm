@@ -42,7 +42,7 @@ main:
 	syscall
 	move $s1, $v0 #save file descriptor to $s1
 	
-#write items from gradedItems to practiceFile.txt
+#write items to practiceFile.txt
 	li $v0, 15
 	move $a0, $s1
 	la $a1, userInput
