@@ -1,6 +1,6 @@
 #	Name:	Jeffrey Rodas,  Andrew John Valdez, Youssef Mikhail
 #	Class:	CS 2640.02
-#	Date: 	04/16/2023
+#	Date: 	05/07/2023
 #	Objectives:
 #		Write an program in Assembly that takes practiceFile.txt file and appends to it.
 #		Answer the following prompt with your file append: "What have you enjoyed most about the class so far?"
