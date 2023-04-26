@@ -9,6 +9,7 @@
 userFile: .space 64 
 userInput: .space 64
 fileName: .asciiz "practiceFile.txt"
+question: .asciiz "What have you enjoyed most about the class so far?: "
 .text
 main:
 #getting file name from user
@@ -19,6 +20,11 @@ main:
 	
 	#save to register
 	move $t1,$a0
+#prompt the question
+	li $v0, 4
+	la $a0, question 
+	syscall
+	
 #getting uese input for what to write
 	li $v0, 8
 	la $a0, userInput
@@ -28,7 +34,7 @@ main:
 	#save to register
 	move $t2,$a0
 
-#opening the 'cs2640Items.txt'
+#opening the 'practiceFile.txt' file
 	li $v0, 13 
 	la $a0, fileName #loading file address
 	li $a1, 9 #writing to this file
@@ -36,14 +42,14 @@ main:
 	syscall
 	move $s1, $v0 #save file descriptor to $s1
 	
-#write items from gradedItems to cs2640Items
+#write items from gradedItems to practiceFile.txt
 	li $v0, 15
 	move $a0, $s1
 	la $a1, userInput
 	li $a2, 63 #how many characters we are writing to the file
 	syscall
 	
-#close the cs2640Items.txt file
+#close the practiceFile.txt file
 	li $v0, 16
 	move $a0, $s1
 	syscall
